@@ -1,0 +1,9 @@
+vim readmore.txt
+cat readmore.txt 
+git log 
+git reflog
+git status 
+git add readmore.txt
+git commit -m "third"
+git reset --hard HADE^
+git reset --hard *****
