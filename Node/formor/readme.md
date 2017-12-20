@@ -4,6 +4,11 @@
 #有些问题
 已解决：在app.js文件中，如果 var user =require("./lib/middleware/user")  就会报错，如果改为usser就没问题  即改变user这个变量名就没事！
 因为express初始生成一句话  var user = require("./routes/user.js")
+
+
+##http://localhost:3000/api/entry  请求连接失败
+##在构造REST API时，只认证一次，即使不登陆也可以访问user内容？？？！
+##esicAuth(User.authxports.auth=express.baenticate);     //express.basicAuth估计会自动传参把！！！！？（./routes/api.js)
  
 
 ##在./views/entries.ejs中，Error: Could not find include include file.是因为多了一句话    <% include pager %>  注释也没用  删了才正常！

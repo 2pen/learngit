@@ -53,6 +53,15 @@ var crypto = require('crypto')
          fn();
  }
 
+ //如果对象上有.toJSON，JSON.stringify,就会用它返回的JSON格式（目的是限制返回的属性）
+
+ User.prototype.toJSON = function(){
+     return {
+         id:this.id,
+         name:this.name
+     }
+ };
+
 
 // var tobi = new User({
 //   name: 'Tobi',

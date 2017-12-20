@@ -16,6 +16,7 @@ var entries = require('./routes/entries');
 var validate = require('./lib/middleware/validate');
 var page = require('./lib/middleware/page');
 var Entry = require('./lib/entry');
+var api = require('./routes/api');
 
 var app = express();
 
@@ -35,6 +36,10 @@ app.use(express.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(messages);
+app.use('/api',api.auth);             //  /api是挂载点  任何以/api开头的请求路径名和HTTP谓词都会导致这个中间件被调用
+
+
+//只认证一次，即使不登陆也可以访问user内容？？？！
 app.use(usser);
 app.use(app.router);
 
@@ -67,6 +72,9 @@ app.post('/post',
 validate.required('entry[title]'),
 validate.lengthAbove('entry[title]',4)
 ,entries.submit);
+app.get('/api/user/:id',api.user);
+app.post('/api/entry',entries.submit);
+app.get('/api/entries/:page?',page(Entry.count),api.entries);
 
 app.get('/:page?',page(Entry.count,5),entries.list);
 
