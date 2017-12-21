@@ -42,6 +42,8 @@ app.use('/api',api.auth);             //  /api是挂载点  任何以/api开头�
 //只认证一次，即使不登陆也可以访问user内容？？？！
 app.use(usser);
 app.use(app.router);
+app.use(routes.notfound);
+app.use(routes.error);
 
 
 app.get((req,res,next)=>{
@@ -81,6 +83,13 @@ app.get('/:page?',page(Entry.count,5),entries.list);
 
 
 
+if (process.env.ERROR_ROUTE) {                       //这个内部错误测试是在浏览器上做的，在Postman上显示是406错误，很诡异！
+  app.get('/dev/error', function(req, res, next){
+    var err = new Error('database connection failed');
+    err.type = 'database';
+    next(err);
+  });
+}
 
 
 http.createServer(app).listen(app.get('port'), function(){

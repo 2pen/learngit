@@ -1,12 +1,17 @@
 #数据存储
 ##在链表中，把消息内容和发言人打包成JSON字符串传给数据库，在获取信息时，把JSON解析后作为整体传给一个数组，这个数组再传给模板引擎，遍历后可全部输出！！
 
+##关于错误处理
+原来内部错误  会传给next 并默认用500服务器内部错误作为响应
+如果没有找到请求资源 会用404响应  如果数据库断掉 会用500响应
+当connext穷尽所有中间件仍没有找到响应项时，它会用404和一小段普通文本字符串作为响应！！！
+
 #有些问题
 已解决：在app.js文件中，如果 var user =require("./lib/middleware/user")  就会报错，如果改为usser就没问题  即改变user这个变量名就没事！
 因为express初始生成一句话  var user = require("./routes/user.js")
 
-
-##http://localhost:3000/api/entry  请求连接失败
+##这个内部错误测试是在浏览器上做的，在Postman上显示是406错误，很诡异！
+##http://localhost:3000/api/entry  请求连接失败（这个当然失败了，entry是用来提交表单用的）
 ##在构造REST API时，只认证一次，即使不登陆也可以访问user内容？？？！
 ##esicAuth(User.authxports.auth=express.baenticate);     //express.basicAuth估计会自动传参把！！！！？（./routes/api.js)
  
