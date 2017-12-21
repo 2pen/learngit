@@ -1,0 +1,86 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% include menu %>
+
+    <h1><%= title %></h1>
+    <p>Fill in the form below to sign up!</p>
+
+    <% include messages %>
+
+    <form action='/register' method='post'>
+      <p>
+        <input type='text' name='user[name]' placeholder='Username' />
+      </p>
+      <p>
+        <input type='password' name='user[pass]' placeholder='Password' />
+      </p>
+      <p>
+        <input type='submit' value='Sign Up' />
+      </p>
+    </form>
+  </body>
+  </html> -->
+
+
+  <!doctype html>
+  <html>
+  <head>
+  <meta charset="utf-8">
+  <title>用户注册页面</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reg.css"/>
+  </head>
+  
+  <body>
+    <div id="top">
+      <div id="menu">
+        <ul>
+      <li><img src="../images/digitalmedia.jpg" /></li>
+      <li><a href='/'>首页</a></li>
+      <li><a href="/det">科技资讯</a></li>
+      <li><a href="">成绩查询</a></li>
+      <li><a href="">资料收集</a></li>
+      <!--<li>帐号绑定</li>-->
+      <li><a href="">留言版</a></li>
+      <!--<li>我的二维码</li>-->
+      <li><a href="/login">登陆</a>
+        /<a href="/register">注册</a></li>
+      </ul>
+      </div>	
+    </div>
+    <div id="box">
+    <p class="p_line">注册帐号<span style="padding-left:700px ">
+      已有帐号直接<a href="/login">登录</a></span></p>
+    <p style="margin-top: 40px">
+        <% include messages %>
+
+        <form action='/register' method='post'>
+      <p><input type="text" class="txtbox" name='user[name]' placeholder="请输入帐号"></p>
+    <p><input type="password" class="txtbox" name='user[pass]' placeholder="请输入密码"></p>
+    <p><input type="submit" value="提交注册" class="btn"></p>
+  </form>
+
+
+    </div>
+    <div id="bottom">
+    <div id="bottom-content">
+      <div id="content-left">
+        <p><img src="../images/群二维码.png" height="30%" width="30%" ></p>
+        <p>网站位置 | 关于我们 | 意见反馈</p>
+      </div>
+      <div id="content-right">
+        <p>友情链接</p>
+        <p><a href="https://www.csdn.net/"	target="_blank">CSDN</a>| 
+          <a>教务处</a> | 
+          <a href="http://lib.njit.edu.cn/"	target="_blank">图书馆</a></p>
+        <p></p>
+      </div>
+    </div>
+    </div>
+  </body>
+  </html>
+  

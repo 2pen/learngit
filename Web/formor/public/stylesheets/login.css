@@ -1,0 +1,39 @@
+#login{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#login p{
+	text-align: center;
+	font-family: 微软雅黑;
+	
+}
+.textbox{
+	width: 350px;
+	height: 30px;
+	border: 1px solid #e2b709;
+	border-radius: 4px;
+	padding-left: 10px;
+	
+}
+
+.submit{
+	width: 360px;
+	height: 40px;
+	background-color:grey;
+	color: white;
+	border-radius: 4px;
+	border: 1px solid #666666;
+}
+.submit:hover{
+	background-color:red;
+	
+}
+.button{
+	width: 360px;
+	height: 40px;
+   padding-left: 10px;
+	background-color: white;
+	border-radius: 4px;
+	border: 1px solid #666666;
+}

@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% include menu %>
+    <h1><%= title %></h1>
+    <p>Fill in the form below to sign in!</p>
+
+    <% include messages %>
+
+    <form action='/login' method='post'>
+      <p>
+        <input type='text' name='user[name]' placeholder='Username' />
+      </p>
+      <p>
+        <input type='password' name='user[pass]' placeholder='Password' />
+      </p>
+      <p>
+        <input type='submit' value='Login' />
+      </p>
+    </form>
+  </body>
+</html> -->
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>实验报告管理网站</title>
+	<link rel="stylesheet" href="/stylesheets/login.css" type="text/css"/>
+</head>
+
+<body>
+
+    <!-- <% include menu %> -->
+
+	<div id="login">
+	<p><img src="../images/timg.jpg" width="35%" height="35%"></p>
+  <p style="font-size: 28px">帮你更快更好地书写报告</p>
+
+  <% include messages %>
+  <form action='/login' method='post'>
+
+
+	<p><input type="text" class="textbox" name='user[name]' placeholder="请输入帐号"></p>
+	<p><input type="password" class="textbox" name='user[pass]' placeholder="请输入密码"></p>
+	<p></a><input type="submit" value="确认登录" class="submit"></a></p>
+	<!-- <p><a href=""><input type="submit" value="忘记密码" class="submit"></a></p> -->
+  <!-- <p><a href="/register"><input type="submit" value="注册帐号" class="submit"></a></p>               这句话有严重的问题！！！需要加一个表格，而不是表单 -->
+   
+  </form>
+	</div>
+</body>
+</html>
