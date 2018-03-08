@@ -1,6 +1,8 @@
 var conventionalChangelog = require('conventional-changelog');
-
+var e=9
+while(1){
 conventionalChangelog({
-  preset: 'express'
+  preset: 'angular'
 })
   .pipe(process.stdout); // or any writable stream
+}
